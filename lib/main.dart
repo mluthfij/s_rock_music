@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,14 +36,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFA90140),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(20),
+        child: AppBar(
+          backgroundColor: const Color(0xFFA90140),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             SizedBox(
-              width: double.infinity, // Adjust width size
+              width: double.infinity,
               child: Column(
                 children: [
                   Padding(
@@ -72,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       decoration: InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Search "Punjabi Lyrics"',
-                                        hintStyle: TextStyle(color: Colors.white54),
+                                        hintStyle: TextStyle(color: Color(0xFF61616B)),
                                       ),
                                     ),
                                   ),
@@ -108,12 +112,50 @@ class _MyHomePageState extends State<MyHomePage> {
                         bottomRight: Radius.circular(10),
                       ),
                     ),
-                    child: const Center(
-                      child: Text(
-                      'Gradient Background',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Claim your',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Free Demo',
+                          style: GoogleFonts.pacifico(
+                            fontSize: 45,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'for custom Music Production',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                            child: Text('Book Now', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                          ),
+                        )
+                      ],
+                    )
                   ),
                   const SizedBox(
                     height: 80,
