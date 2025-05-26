@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: const Color(0xFF18171C),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -36,52 +36,111 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color(0xFFA90140),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '0', // This should be replaced with a state variable to show the count
-              style: Theme.of(context).textTheme.headlineMedium,
+            SizedBox(
+              width: double.infinity, // Adjust width size
+              child: Column(
+                children: [
+                  Container(
+                    height: 300,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFFA90140), // Bright top color
+                          Color(0xFF6E0026), // Darker bottom color
+                        ],
+                      ),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                      'Gradient Background',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 80,
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Text(
+                            'Hire hand-picked Pros for popular music services',
+                            style: TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'Syne'),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Card(
+                      color: Color.fromARGB(0, 0, 0, 0),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.music_note, color: Colors.white),
+                              title: Text('Video Production', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                              subtitle: Text('Professional video editing & production', style: TextStyle(color: Colors.white, fontSize: 15)),
+                              trailing: Icon(Icons.play_arrow, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.deepPurple,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.home),
-              onPressed: () {
-                // Handle home button press
-              },
+        color: const Color(0xFF18171C),
+        child: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
             ),
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                // Handle search button press
-              },
+            border: Border(
+              top: BorderSide(color: Colors.white, width: 0.35),
             ),
-            IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {
-                // Handle notifications button press
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.account_circle),
-              onPressed: () {
-                // Handle account button press
-              },
-            ),
-          ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.home, color: Colors.white),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.search, color: Colors.white),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.notifications, color: Colors.white),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.person, color: Colors.white),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
