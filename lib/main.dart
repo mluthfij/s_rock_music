@@ -190,122 +190,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Card(
-                      color: const Color.fromARGB(0, 0, 0, 0),
-                      child: Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                        image: AssetImage('assets/background-image-1.png'),
-                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
-                        fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: Image.asset('assets/icon-7.png', width: 50, height: 50),
-                              title: const Text('Music Production', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                              subtitle: const Text('Custom instrumentals & film scoring', style: TextStyle(color: Colors.white, fontSize: 12)),
-                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
-                            ),
-                          ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Card(
-                      color: const Color.fromARGB(0, 0, 0, 0),
-                      child: Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                        image: AssetImage('assets/background-image-3.png'),
-                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
-                        fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: Image.asset('assets/icon-8.png', width: 50, height: 50),
-                              title: const Text('Mixing & Mastering', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                              subtitle: const Text('Make your tracks Radio-ready', style: TextStyle(color: Colors.white, fontSize: 12)),
-                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
-                            ),
-                          ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Card(
-                      color: const Color.fromARGB(0, 0, 0, 0),
-                      child: Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                        image: AssetImage('assets/background-image-4.png'),
-                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
-                        fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: Image.asset('assets/icon-9.png', width: 50, height: 50),
-                              title: const Text('Lyrics Writing', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                              subtitle: const Text('Turn feelings into lyrics', style: TextStyle(color: Colors.white, fontSize: 12)),
-                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
-                            ),
-                          ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: Card(
-                      color: const Color.fromARGB(0, 0, 0, 0),
-                      child: Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                        image: AssetImage('assets/background-image-2.png'),
-                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
-                        fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: Image.asset('assets/icon-10.png', width: 50, height: 50),
-                              title: const Text('Vocals', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                              subtitle: const Text('Vocals that brings your lyrics to life', style: TextStyle(color: Colors.white, fontSize: 12)),
-                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
-                            ),
-                          ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  _buildCardList('assets/background-image-1.png', 'assets/icon-7.png', 'Music Production', 'Custom instrumentals & film scoring'),
+                  _buildCardList('assets/background-image-3.png', 'assets/icon-8.png', 'Mixing & Mastering', 'Make your tracks Radio-ready'),
+                  _buildCardList('assets/background-image-4.png', 'assets/icon-9.png', 'Lyrics Writing', 'Turn feelings into lyrics'),
+                  _buildCardList('assets/background-image-2.png', 'assets/icon-10.png', 'Vocals', 'Vocals that brings your lyrics to life'),
                 ],
               ),
             ),
@@ -358,5 +246,38 @@ class _MyHomePageState extends State<MyHomePage> {
         Text(label, style: const TextStyle(color: Colors.white, fontSize: 12)),
       ],
     );
+  }
+
+  Widget _buildCardList(String assetBackgroundPath, String assetPath, String title, String subtitle) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+      child: Card(
+        color: const Color.fromARGB(0, 0, 0, 0),
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(assetBackgroundPath),
+              colorFilter: const ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ListTile(
+                  leading: Image.asset(assetPath, width: 50, height: 50),
+                  title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                  subtitle: Text(subtitle, style: const TextStyle(color: Colors.white, fontSize: 12)),
+                  trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+    
   }
 }
