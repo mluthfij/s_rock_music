@@ -95,39 +95,41 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 300,
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
+                    Stack(
+                    children: [
+                      Container(
+                      height: 300,
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                           Color(0xFFA90140),
                           Color(0xFF6E0026),
                         ],
-                      ),
-                      borderRadius: BorderRadius.only(
+                        ),
+                        borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10),
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                         Text(
                           'Claim your',
                           style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            color: Colors.white,
+                          fontSize: 16,
+                          color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'Free Demo',
                           style: GoogleFonts.pacifico(
-                            fontSize: 45,
-                            color: Colors.white,
+                          fontSize: 45,
+                          color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -135,28 +137,46 @@ class _MyHomePageState extends State<MyHomePage> {
                           'for custom Music Production',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            color: Colors.white,
+                          fontSize: 16,
+                          color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 20),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                           ),
                           onPressed: () {},
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                            child: Text('Book Now', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Text('Book Now', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                           ),
-                        )
-                      ],
-                    )
-                  ),
+                        ),
+                        ],
+                      ),
+                      ),
+                      Positioned(
+                      bottom: 10,
+                      left: -40,
+                      child: Image.asset(
+                        'assets/icon-1.png',
+                        width: 130,
+                      ),
+                      ),
+                      Positioned(
+                      bottom: 10,
+                      right: -45,
+                      child: Image.asset(
+                        'assets/icon-2.png',
+                        width: 130,
+                      ),
+                      ),
+                    ],
+                    ),
                   const SizedBox(
                     height: 80,
                       child: Center(
