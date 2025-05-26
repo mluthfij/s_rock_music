@@ -194,6 +194,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Card(
                       color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Container(
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                        image: AssetImage('assets/background-image-1.png'),
+                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
+                        fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -205,6 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
                             ),
                           ],
+                          ),
                         ),
                       ),
                     ),
@@ -213,6 +223,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Card(
                       color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Container(
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                        image: AssetImage('assets/background-image-3.png'),
+                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
+                        fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -224,6 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
                             ),
                           ],
+                          ),
                         ),
                       ),
                     ),
@@ -232,6 +252,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Card(
                       color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Container(
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                        image: AssetImage('assets/background-image-4.png'),
+                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
+                        fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -243,6 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
                             ),
                           ],
+                          ),
                         ),
                       ),
                     ),
@@ -251,6 +281,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Card(
                       color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Container(
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                        image: AssetImage('assets/background-image-2.png'),
+                        colorFilter: ColorFilter.mode(Color.fromARGB(215, 0, 0, 0), BlendMode.darken),
+                        fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -262,6 +301,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
                             ),
                           ],
+                          ),
                         ),
                       ),
                     ),
