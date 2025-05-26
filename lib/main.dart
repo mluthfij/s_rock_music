@@ -45,6 +45,52 @@ class _MyHomePageState extends State<MyHomePage> {
               width: double.infinity, // Adjust width size
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFA90140)
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF2F2F39),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 12),
+                              child: const Row(
+                                children: [
+                                  Icon(Icons.search, color: Colors.white70),
+                                  SizedBox(width: 8),
+                                  Expanded(
+                                    child: TextField(
+                                      style: TextStyle(color: Colors.white),
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: 'Search "Punjabi Lyrics"',
+                                        hintStyle: TextStyle(color: Colors.white54),
+                                      ),
+                                    ),
+                                  ),
+                                  Icon(Icons.mic, color: Colors.white70),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundColor: Colors.purple.shade100,
+                            child: const Icon(Icons.person_2_outlined, color: Colors.deepPurple),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   Container(
                     height: 300,
                     width: double.infinity,
@@ -53,8 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color(0xFFA90140), // Bright top color
-                          Color(0xFF6E0026), // Darker bottom color
+                          Color(0xFFA90140),
+                          Color(0xFF6E0026),
                         ],
                       ),
                       borderRadius: BorderRadius.only(
