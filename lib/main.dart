@@ -190,19 +190,76 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Card(
-                      color: Color.fromARGB(0, 0, 0, 0),
+                      color: const Color.fromARGB(0, 0, 0, 0),
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             ListTile(
-                              leading: Icon(Icons.music_note, color: Colors.white),
-                              title: Text('Video Production', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                              subtitle: Text('Professional video editing & production', style: TextStyle(color: Colors.white, fontSize: 15)),
-                              trailing: Icon(Icons.play_arrow, color: Colors.white),
+                              leading: Image.asset('assets/icon-7.png', width: 50, height: 50),
+                              title: const Text('Music Production', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                              subtitle: const Text('Custom instrumentals & film scoring', style: TextStyle(color: Colors.white, fontSize: 12)),
+                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Card(
+                      color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Image.asset('assets/icon-8.png', width: 50, height: 50),
+                              title: const Text('Mixing & Mastering', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                              subtitle: const Text('Make your tracks Radio-ready', style: TextStyle(color: Colors.white, fontSize: 12)),
+                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Card(
+                      color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Image.asset('assets/icon-9.png', width: 50, height: 50),
+                              title: const Text('Lyrics Writing', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                              subtitle: const Text('Turn feelings into lyrics', style: TextStyle(color: Colors.white, fontSize: 12)),
+                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Card(
+                      color: const Color.fromARGB(0, 0, 0, 0),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Image.asset('assets/icon-10.png', width: 50, height: 50),
+                              title: const Text('Vocals', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                              subtitle: const Text('Vocals that brings your lyrics to life', style: TextStyle(color: Colors.white, fontSize: 12)),
+                              trailing: const Icon(Icons.play_arrow, color: Colors.white, size: 20),
                             ),
                           ],
                         ),
@@ -215,42 +272,51 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: const Color(0xFF18171C),
-        child: Container(
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-            border: Border(
-              top: BorderSide(color: Colors.white, width: 0.35),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.home, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.search, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.notifications, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.person, color: Colors.white),
-                onPressed: () {},
-              ),
-            ],
+
+      bottomNavigationBar: ClipRect(
+        child: BottomAppBar(
+          color: const Color(0xFF18171C),
+          child: Builder(
+            builder: (context) {
+              final bottomPadding = MediaQuery.of(context).padding.bottom;
+
+              return Container(
+                padding: EdgeInsets.only(top: 4, bottom: bottomPadding + 8),
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  border: Border(
+                    top: BorderSide(color: Colors.white, width: 0.35),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildNavItem('assets/icon-3.png', 'Home'),
+                    _buildNavItem('assets/icon-4.png', 'News'),
+                    _buildNavItem('assets/icon-5.png', 'TrackBox'),
+                    _buildNavItem('assets/icon-6.png', 'Projects'),
+                  ],
+                ),
+              );
+            },
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildNavItem(String assetPath, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(assetPath, width: 24.65),
+        const SizedBox(height: 2),
+        Text(label, style: const TextStyle(color: Colors.white, fontSize: 12)),
+      ],
     );
   }
 }
